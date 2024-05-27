@@ -1,31 +1,31 @@
 @-moz-document domain(youtube.com){
     :root {
-        --ytd-masthead-height: 40px;
+        --ytd-masthead-height: 40px !important;
     }
     ytd-masthead {
-        border-bottom: 1px solid #ccc;
-        height: 40px;
-        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid #ccc !important;
+        height: 40px !important;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) !important;
     }
     ytd-masthead[dark] {
-        border-bottom: none;
+        border-bottom: none !important;
     }
     ytd-masthead #container.ytd-masthead {
-        height: 40px;
+        height: 40px !important;
     }
     /* Left-align the search bar */
     ytd-masthead #container.ytd-masthead #start.ytd-masthead {
-        width: calc(var(--ytd-app-drawer-width, 240px) - 16px);
+        width: calc(var(--ytd-app-drawer-width, 240px) - 16px) !important;
     }
     ytd-masthead #container.ytd-masthead #center.ytd-masthead {
-        flex: 1;
-        align-items: flex-start;
+        flex: 1 !important;
+        align-items: flex-start !important;
     }
     ytd-masthead #container.ytd-masthead #center ytd-searchbox {
-        display: contents;
+        display: contents !important;
     }
     ytd-masthead #container.ytd-masthead #center ytd-searchbox #search-form.ytd-searchbox {
-        max-width: 700px;
+        max-width: 700px !important;
     }
     
     /* Shrink the chip bar and remove the mobiliness from it
@@ -37,45 +37,49 @@
     }
     ytd-feed-filter-chip-bar-renderer {
         height: 28px !important;
-        background: none;
-        border: none;
+        background: none !important;
+        border: none !important;
     }
     yt-chip-cloud-chip-renderer {
         margin-top: 4px !important;
         margin-bottom: 0 !important;
-        height: 100%;
-        border-radius: 2px;
-    }
+        height: 100% !important;
+        border-radius: 2px !important;
+        -webkit-border-radius: 2px !important;
+        -moz-border-radius: 2px !important;
+        -ms-border-radius: 2px !important;
+        -o-border-radius: 2px !important;
+}
     /* Make it not sticky */
     ytd-feed-filter-chip-bar-renderer.ytd-rich-grid-renderer {
-        position: absolute;
+        position: absolute !important;
     }
     
     /* add borders to the sidebars */
     app-drawer, ytd-mini-guide-renderer {
-        border-right: 1px solid #ccc;
-        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+        border-right: 1px solid #ccc !important;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) !important;
     }
     /* Fix the mini sidebar being on top of the header for some reason
      * It only overlaps by 1px, but this causes it to cover the border */
     ytd-mini-guide-renderer {
-        z-index: 1900;
+        z-index: 1900 !important;
     }
     /* Make the sidebar items smaller */
     ytd-guide-section-renderer {
-        --paper-item-min-height: 32px;
+        --paper-item-min-height: 32px !important;
     }
     /* Reduce the amount of whitespace above "Recommended" */
     ytd-rich-grid-renderer #grid-title.ytd-rich-grid-renderer {
-        margin-top: 8px;
+        margin-top: 8px !important;
     }
     /* Reduce the video tiles to a reasonable size, which in this case is 3/5ths of
      * the original size. I tried 1/2, but it's just a little too small. */
     ytd-rich-item-renderer {
-            margin-left: calc(var(--ytd-rich-grid-item-margin) / 4);
-            margin-right: calc(var(--ytd-rich-grid-item-margin) / 4);
-            margin-bottom: 40px;
-            width: calc( 100% / (5*var(--ytd-rich-grid-items-per-row)/3) - (5*var(--ytd-rich-grid-item-margin)/3) - 0.01px );
+            margin-left: calc(var(--ytd-rich-grid-item-margin) / 4) !important;
+            margin-right: calc(var(--ytd-rich-grid-item-margin) / 4) !important;
+            margin-bottom: 40px !important;
+            width: calc( 100% / (5*var(--ytd-rich-grid-items-per-row)/3) - (5*var(--ytd-rich-grid-item-margin)/3) - 0.01px ) !important;
     }
     /* Remove excess whitespace around misc section headers */
     ytd-rich-shelf-renderer #rich-shelf-header {
@@ -85,38 +89,38 @@
     }
     /* Decided to leave the posts at their original size */
     ytd-rich-item-renderer[is-post] {
-            width: calc( 100% / var(--ytd-rich-grid-posts-per-row) - (5*var(--ytd-rich-grid-item-margin)/3) - 0.01px );
+            width: calc( 100% / var(--ytd-rich-grid-posts-per-row) - (5*var(--ytd-rich-grid-item-margin)/3) - 0.01px ) !important;
     }
     /* Remove avatars from the video tiles. */
     #details.ytd-rich-grid-video-renderer a#avatar-link {
-        display: none;
+        display: none !important;
     }
     /* Remove whitespace around video title in tiles */
     h3.ytd-rich-grid-video-renderer {
-        margin: 0;
+        margin: 0 !important;
     }
     /* Reduce font size of video title in tiles */
     #video-title.ytd-rich-grid-video-renderer {
-        font-size: 1.4rem;
-        font-weight: normal;   
+        font-size: 1.4rem !important;
+        font-weight: normal !important;   
     }
     
     /* Add borders and drop shadows around the "Up next" box */
     ytd-watch-flexy:not([theater]):not([fullscreen]) #secondary.ytd-watch-flexy {
-            margin-top: var(--ytd-margin-6x);
+            margin-top: var(--ytd-margin-6x) !important;
     }
     ytd-watch-flexy[theater]:not([fullscreen]) #secondary.ytd-watch-flexy {
-            margin-top: 8px;
+            margin-top: 8px !important;
     }
     ytd-watch-flexy[flexy_] #secondary.ytd-watch-flexy {
-            margin-right: var(--ytd-margin-6x);
-            width: var(--ytd-watch-flexy-sidebar-width);
+            margin-right: var(--ytd-margin-6x) !important;
+            width: var(--ytd-watch-flexy-sidebar-width) !important;
         padding: 8px !important;
-        box-sizing: border-box;
-            min-width: var(--ytd-watch-flexy-sidebar-min-width);
-        border: 1px solid #ccc;
-        background: white;
-        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+        box-sizing: border-box !important;
+            min-width: var(--ytd-watch-flexy-sidebar-min-width) !important;
+        border: 1px solid #ccc !important;
+        background: white !important;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) !important;
     }
     
     /* Try to add borders and drop shadows around the video description.
@@ -126,33 +130,33 @@
      * like a seamless border. clip-path is necessary to avoid creating a
      * thin grey line along the seams, which would be caused by the shadows. */
     ytd-watch-flexy #columns #primary-inner > #info {
-        margin-top: 8px;
-        padding-top: 8px;
+        margin-top: 8px !important;
+        padding-top: 8px !important;
         border-top: 1px solid #ccc !important;
     }
     ytd-watch-flexy #columns #primary-inner {
         /* In the default layout, there's a gap after the #info element.
          * I can't figure out where it's coming from, so make the whole container
          * a flexbox to nuke it from orbit. */
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
     }
     ytd-watch-flexy #columns #primary-inner > #info, ytd-watch-flexy #columns #primary-inner > #meta, ytd-watch-flexy #columns #primary-inner > #ticket-shelf, ytd-watch-flexy #columns #primary-inner > #merch-shelf, ytd-comments {
-        padding-left: 8px;
-        padding-right: 8px;
-        border: 1px solid #ccc;
-        background: white;
-        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
-        clip-path: inset(0px -5px 0px -5px);
-        border-bottom: none;
-        border-top: none;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        border: 1px solid #ccc !important;
+        background: white !important;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) !important;
+        clip-path: inset(0px -5px 0px -5px) !important;
+        border-bottom: none !important;
+        border-top: none !important;
     }
     ytd-comments {
         border-bottom: 1px solid #ccc !important;
         
     }
     ytd-watch-flexy #columns #primary-inner > #info ytd-video-primary-info-renderer {
-        padding-top: 0;
+        padding-top: 0 !important;
     }
     
     /* Remove border and excess margin around avatars & icons in the sidebar */
@@ -160,7 +164,7 @@
         border-radius: 0 !important;
     }
     yt-img-shadow.ytd-guide-entry-renderer, .guide-icon.ytd-guide-entry-renderer {
-        margin-right: 12px;
+        margin-right: 12px !important;
     }
     
     /* Try to make the search results line up with the search bar */
@@ -171,14 +175,14 @@
     
     /* Make likes/dislikes red & green, like God intended */
     #container.ytd-sentiment-bar-renderer {
-        background-color: var(--paper-red-500);
+        background-color: var(--paper-red-500) !important;
     }
     #like-bar.ytd-sentiment-bar-renderer {
-        background-color: var(--google-green-500);
+        background-color: var(--google-green-500) !important;
     }
     /* Make it obvious the toggle button can be interacted with */
     paper-toggle-button {
-        cursor: pointer;
+        cursor: pointer !important;
     }
     /* Remove the awful effect on the channel page header that makes it
      * stutter in a highly distracting fashion when scrolling. */
@@ -188,7 +192,7 @@
         margin-top: 0 !important;
     }
     ytd-browse[page-subtype=channels] #contentContainer.app-header-layout {
-        display: none;
+        display: none !important;
     }
     
     ytd-browse[page-subtype=channels] app-header #background.app-header * {
